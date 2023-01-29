@@ -7,17 +7,21 @@ const formDataEl = {
 formEl.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
+    
     event.preventDefault();
+    
     const {
         elements: { email, password }
-        } = event.currentTarget;
+    } = event.currentTarget;
+    
     if (email.value === "" || password.value === "") {
     return alert("Будьласка заповніть всі поля форми!");
     }
+
     formDataEl.email = email.value;
     formDataEl.password = password.value;
     email.value = '';
-    email.password = '';
+    password.value = '';
 
     // console.log(formDataEl);
     return formDataEl;
