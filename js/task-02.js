@@ -28,11 +28,13 @@ const makeIngredientsElements = arrIngredients => {
   return arrIngredients.map(
     item => {
       const ingredientEl = document.createElement('li');
+      // console.log(ingredientEl);
       ingredientEl.textContent = item;
       ingredientEl.className = 'item';
       return ingredientEl;
   });
 }
-const ingredientsElements = makeIngredientsElements(ingredients);
 
+const ingredientsElements = makeIngredientsElements(ingredients);
+console.log(ingredientsElements);
 ingredientsEl.append(...ingredientsElements);
