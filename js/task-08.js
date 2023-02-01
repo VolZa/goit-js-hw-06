@@ -4,6 +4,10 @@ const formDataEl = {
     password: '',
 };
 
+formEl.reset = function () {
+    this.elements.email.value = '';
+    this.elements.password.value = '';
+}
 formEl.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -20,10 +24,9 @@ function handleSubmit(event) {
 
     formDataEl.email = email.value;
     formDataEl.password = password.value;
-    email.value = '';
-    password.value = '';
+    formEl.reset();
 
-    // console.log(formDataEl);
+    console.log(formDataEl);
     return formDataEl;
 }
 

@@ -9,6 +9,21 @@ const ingredients = [
 
 const ingredientsEl = document.querySelector("#ingredients");
 
+const makeIngredientsElements = arrIngredients => {
+  return arrIngredients.map(
+    item => {
+      const ingredientEl = document.createElement('li');
+      ingredientEl.textContent = item;
+      ingredientEl.className = 'item';
+      return ingredientEl;
+  });
+}
+
+const ingredientsElements = makeIngredientsElements(ingredients);
+
+ingredientsEl.append(...ingredientsElements);
+
+// Another option:
 // const ingredientsElements = ingredients.map(item => {
 //   const ingredientEl = document.createElement('li');
 //   ingredientEl.textContent = item;
@@ -23,18 +38,3 @@ const ingredientsEl = document.querySelector("#ingredients");
 //   ingredientEl.className = 'item';
 //   ingredientsElements.push(ingredientEl);
 // }
-
-const makeIngredientsElements = arrIngredients => {
-  return arrIngredients.map(
-    item => {
-      const ingredientEl = document.createElement('li');
-      // console.log(ingredientEl);
-      ingredientEl.textContent = item;
-      ingredientEl.className = 'item';
-      return ingredientEl;
-  });
-}
-
-const ingredientsElements = makeIngredientsElements(ingredients);
-console.log(ingredientsElements);
-ingredientsEl.append(...ingredientsElements);

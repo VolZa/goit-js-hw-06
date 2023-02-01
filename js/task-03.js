@@ -17,7 +17,8 @@ const galeryList = document.querySelector(".gallery");
 let galeryItems = ""; 
  for (let item of images) {
    galeryItems += (`<li><img src=${item.url} alt="${item.alt}" width="600"/></li>`)
- }
+}
+ 
 galeryList.style.display = 'flex';
 galeryList.style.flexWrap = 'wrap';
 galeryList.style.gap = '30px';
